@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.com.crtvu.user.dao.UserDao">
+       <resultMap id="UserResultMap" type="cn.com.crtvu.user.entity.UserEntity">
+              <id column="Host" property="host" jdbcType="VARCHAR"/>
+              <result column="User"                    property="user" jdbcType="VARCHAR"/>
+              <result column="Password"                property="password" jdbcType="VARCHAR"/>
+              <result column="Select_priv"             property="selectPriv" jdbcType="VARCHAR"/>
+              <result column="Insert_priv"             property="insertPriv" jdbcType="VARCHAR"/>
+              <result column="Update_priv"             property="updatePriv" jdbcType="VARCHAR"/>
+              <result column="Delete_priv"             property="deletePriv" jdbcType="VARCHAR"/>
+              <result column="Create_priv"             property="createPriv" jdbcType="VARCHAR"/>
+              <result column="Drop_priv"               property="dropPriv" jdbcType="VARCHAR"/>
+              <result column="Reload_priv"             property="reloadPriv" jdbcType="VARCHAR"/>
+              <result column="Shutdown_priv"           property="shutdownPriv" jdbcType="VARCHAR"/>
+              <result column="Process_priv"            property="processPriv" jdbcType="VARCHAR"/>
+              <result column="File_priv"               property="filePriv" jdbcType="VARCHAR"/>
+              <result column="Grant_priv"              property="grantPriv" jdbcType="VARCHAR"/>
+              <result column="References_priv"         property="referencesPriv" jdbcType="VARCHAR"/>
+              <result column="Index_priv"              property="indexPriv" jdbcType="VARCHAR"/>
+              <result column="Alter_priv"              property="alterPriv" jdbcType="VARCHAR"/>
+              <result column="Show_db_priv"            property="showDbPriv" jdbcType="VARCHAR"/>
+              <result column="Super_priv"              property="superPriv" jdbcType="VARCHAR"/>
+              <result column="Create_tmp_table_priv"   property="createTmpTablePriv" jdbcType="VARCHAR"/>
+              <result column="Lock_tables_priv"        property="lockTablesPriv" jdbcType="VARCHAR"/>
+              <result column="Execute_priv"            property="executePriv" jdbcType="VARCHAR"/>
+              <result column="Repl_slave_priv"         property="replSlavePriv" jdbcType="VARCHAR"/>
+              <result column="Repl_client_priv"        property="replClientPriv" jdbcType="VARCHAR"/>
+              <result column="Create_view_priv"        property="createViewPriv" jdbcType="VARCHAR"/>
+              <result column="Show_view_priv"          property="showViewPriv" jdbcType="VARCHAR"/>
+              <result column="Create_routine_priv"     property="createRoutinePriv" jdbcType="VARCHAR"/>
+              <result column="Alter_routine_priv"      property="alterRoutinePriv" jdbcType="VARCHAR"/>
+              <result column="Create_user_priv"        property="createUserPriv" jdbcType="VARCHAR"/>
+              <result column="Event_priv"              property="eventPriv" jdbcType="VARCHAR"/>
+              <result column="Trigger_priv"            property="triggerPriv" jdbcType="VARCHAR"/>
+              <result column="ssl_type"                property="sslType" jdbcType="VARCHAR"/>
+              <result column="ssl_cipher"              property="sslCipher" jdbcType="VARCHAR"/>
+              <result column="x509_issuer"             property="issuer" jdbcType="VARCHAR"/>
+              <result column="x509_subject"            property="subject" jdbcType="VARCHAR"/>
+              <result column="max_questions"           property="maxQuestions" jdbcType="VARCHAR"/>
+              <result column="max_updates"             property="maxUpdates" jdbcType="VARCHAR"/>
+              <result column="max_connections"         property="maxConnections" jdbcType="VARCHAR"/>
+              <result column="max_user_connections"    property="maxUserConnections" jdbcType="VARCHAR"/>
+       </resultMap>
+
+       <select id="queryUserAll" resultMap="UserResultMap" parameterType="cn.com.crtvu.user.entity.UserEntity">
+              select
+              *
+              FROM
+              user
+       </select>
+
+       <select id="queryUserByHost" resultMap="UserResultMap" parameterType="String">
+              select
+              *
+              FROM
+              user
+              <where>
+                     host = #{host}
+              </where>
+       </select>
+
+</mapper>
