@@ -31,7 +31,7 @@ public class UserRouter {
     }
 
     @RequestMapping(value = "/queryUserByHost", method = RequestMethod.GET)
-    public List<UserEntity> queryUserByHost(@RequestHeader String host){
+    public List<UserEntity> queryUserByHost(@RequestHeader(name = "host", required = true) String host){
         List<UserEntity> userEntities = userService.queryUserByHost(host);
         return userEntities;
     }
