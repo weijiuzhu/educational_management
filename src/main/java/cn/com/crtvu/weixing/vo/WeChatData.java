@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 public class WeChatData {
     String touser;
     String msgtype;
+
+
     int agentid;
     Object text;
     public Object getText() {
