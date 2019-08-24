@@ -34,6 +34,8 @@ public class WeChatData {
     public String getTouser() {
         return touser;
     }
+
+
     public void setTouser(String touser) {
         this.touser = touser;
     }
