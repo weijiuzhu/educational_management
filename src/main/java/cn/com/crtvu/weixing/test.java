@@ -3,6 +3,7 @@ package cn.com.crtvu.weixing;
 import cn.com.crtvu.weixing.mo.TestPOST;
 
 import java.io.IOException;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * Created by weijiuzhu on 2019/8/7.
@@ -10,11 +11,8 @@ import java.io.IOException;
 public class test {
 
     public static void main(String[] args) throws IOException {
-
-        TestPOST testPOST = new TestPOST();
-
-
-        testPOST.sendTextMesg("oiRtgwWaW5cIHSfPVR7ZdIvfFV_U", "22222");
+        int i = Runtime.getRuntime().availableProcessors();
+        System.out.println(i);
 
     }
 }
