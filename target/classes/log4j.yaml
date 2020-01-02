@@ -1,0 +1,22 @@
+Configuration:
+ status: INFO
+ monitorInterval: 30
+
+ Appenders:
+  Console:
+   name: CONSOLE
+   target: SYSTEM_OUT
+   PatternLayout:
+    pattern: "%d{HH:mm:ss.SSS}{GMT+8} [%thread] [%-5level] %logger{36} - %msg%n"
+
+ Loggers:
+  Root:
+   level: INFO
+   AppenderRef:
+    - ref: CONSOLE
+  Logger:
+   - name: mapper
+     additivity: false
+     level: all
+     AppenderRef:
+      - ref: CONSOLE
